@@ -66,11 +66,24 @@ public class J01Problem {
         return dp[0];
     }
 
+    // Using Sum Formula
+    public static int solution2(int n) {
+        int sum = 0;
+        for (int i = n - 1; i >= 1; i--) {
+            sum = (i * (i + 1)) / 2;
+            if (sum % n == 1) {
+                return i;
+            }
+        }
+        return 0;
+    }
+
     public static void main(String[] args) {
         // Scanner sc = new Scanner(System.in);
         // int n = sc.nextInt();
         // System.out.println(solution(n));
 
         System.out.println("N= 5 -> Answer:- " + solution(5));
+        System.out.println("N= 7 -> Answer:- " + solution2(7));
     }
 }
